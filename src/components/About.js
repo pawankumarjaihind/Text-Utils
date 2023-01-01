@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function About() {
+export default function About(props) {
 
 
-    const [myStyle, setMyStyle] = useState({
-        color:'black',
-        backgroundColor :'white'
-        }
-    );
+    // const [myStyle, setMyStyle] = useState({
+    //     color:'black',
+    //     backgroundColor :'white'
+    //     }
+    // );
 
-    const [btnText, setBtnText] = useState('Enable Dark Mode');
+    // const [btnText, setBtnText] = useState('Enable Dark Mode');
 
-    const toggleStyle = () => {
-        if(myStyle.color==='black'){
-            setMyStyle({
-                color : 'white',
-                backgroundColor : 'black',
-                border : '1px solid white'
-            });
-            setBtnText("Enable Light Mode");
-        }
-        else{
-            setMyStyle({
-                color : 'black',
-                backgroundColor : 'white'
-            });
-            setBtnText("Enable Dark Mode");
-        }
+    // const toggleStyle = () => {
+    //     if(myStyle.color==='black'){
+    //         setMyStyle({
+    //             color : 'white',
+    //             backgroundColor : 'black',
+    //             border : '1px solid white'
+    //         });
+    //         setBtnText("Enable Light Mode");
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             color : 'black',
+    //             backgroundColor : 'white'
+    //         });
+    //         setBtnText("Enable Dark Mode");
+    //     }
+    // }
+
+    let myStyle = {
+        color : props.mode==='dark'?'white':'black',
+        backgroundColor : props.mode==='dark'?'#042743':'white',
+        // border : '2px solid',
+        // borderColor : props.mode==='dark'?'white':'black'
     }
 
   return (
@@ -71,9 +78,9 @@ export default function About() {
         </div>
   </div>
 </div>
-<div className="container">
+{/* <div className="container">
     <button type='button' onClick={toggleStyle} className='btn btn-primary'>{btnText}</button>
-</div>
+</div> */}
     </div>
   )
 }

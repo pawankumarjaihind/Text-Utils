@@ -32,7 +32,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled","success");
-      document.title = 'TextUtils - Dark Mode';
+      // document.title = 'TextUtils - Dark Mode';
       // setInterval(() => {
       //   document.title = 'TextUtils is amazing';
       // }, 2000);
@@ -55,19 +55,19 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       {/* <div className="container"> */}
-        {/* <Routes> */}
-            {/* <Route path="/about" component={<About/>}/> */}
-              {/* <About /> */}
-            {/* </Route> */}
-            {/* <Route path="/"> */}
-              {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/> */}
-            {/* </Route> */}
-        {/* </Routes> */}
+        {/* <Routes>
+            <Route path="/about" component={<About/>}/>
+              <About />
+            </Route>
+            <Route path="/">
+              <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/>
+            </Route>
+        </Routes> */}
       {/* </div> */}
       
         <div className="container">
           <Routes>
-            <Route path="/about" element={<About />}>
+            <Route path="/about" element={<About mode={mode}/>}>
             </Route>
             <Route path="/" element={<TextForm heading="Enter text to analyze"  mode={mode} showAlert={showAlert} />}>
             </Route>
